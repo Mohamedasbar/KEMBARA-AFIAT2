@@ -690,5 +690,152 @@ footer .link a:hover {
   100% { transform: translateY(-150px) scale(0.5); opacity: 0; }
 }
 
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* left-right on desktop */
+  align-items: center;
+  padding: 12px 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #1622c5, #092ed3);
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  transform: scale(1.08);
+}
+
+/* ===== MENU ICON ===== */
+.menu-icon {
+  display: none; /* hidden on desktop */
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.menu-icon:hover {
+  transform: scale(1.2) rotate(90deg);
+  color: #f1c40f;
+}
+
+/* ===== SLIDE MENU ===== */
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 280px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+  transition: right 0.4s ease-in-out;
+  padding-top: 70px;
+  z-index: 9999;
+}
+
+.slide-menu.active {
+  right: 0;
+}
+
+.slide-menu .close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.slide-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.slide-menu li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.slide-menu a {
+  display: block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+.slide-menu a:hover {
+  background: linear-gradient(45deg, #0077ff, #025ee7);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* stack logo + links */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .navbar a {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .menu-icon {
+    display: block; /* show menu icon */
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  /* Center logo/company name */
+  .company-box {
+    justify-content: center;
+  }
+
+  /* Slide menu width on mobile */
+  .slide-menu {
+    width: 80%;
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-menu {
+    width: 90%;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+  }
+}
+
 /* Include all previous CSS here, including navbar, products grid, buttons, footer, about, etc. */
 /* Make sure the mobile responsive sections from my previous answer are included */
+

@@ -47,6 +47,7 @@ body {
   padding: 15px;
   background: white;
   border-bottom: 1px solid #eee;
+
 }
 
 .navbar a {
@@ -97,7 +98,7 @@ body {
 .product-box {
   background: white;
   border-radius: 12px;
-  padding: 15px;
+  padding: 6px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
@@ -109,12 +110,12 @@ body {
 .product-box:hover {
   transform: scale(1.05);
   opacity: 0.95;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 32px 32px rgba(66, 65, 65, 0.301);
 }
 
 .product-img {
   width: 100%;
-  height: 95px;
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
   transition: 0.3s;
@@ -480,6 +481,7 @@ footer .link a:hover {
   0% { transform: translateY(0) scale(1); opacity: 1; }
   100% { transform: translateY(-150px) scale(0.5); opacity: 0; }
 }
+
 
 
 

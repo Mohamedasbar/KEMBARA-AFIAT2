@@ -1,0 +1,128 @@
+/* Full page background with gradient */
+.lifestyle-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ade6ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center; /* ✅ Center all text */
+}
+
+/* Main content container */
+.lifestyle-content {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 900px;
+  text-align: center; /* ✅ Center inside content */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Typing effect style with gradient text */
+.typing-effect {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #27ae60, #2ecc71, #16a085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  animation: typing 4s steps(30) forwards, blink 0.8s infinite;
+  display: inline-block;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%, 50%, 100% { border-right-color: transparent; }
+  25%, 75% { border-right-color: #27ae60; }
+}
+
+/* Leaves container */
+.leaves-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Leaf styles and animation */
+.leaf {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.8;
+  animation-name: floatLeaf;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Floating leaf animation */
+@keyframes floatLeaf {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* Different positions and speeds for leaves */
+.leaf-0 { left: 5%; animation-duration: 15s; animation-delay: 0s; }
+.leaf-1 { left: 12%; animation-duration: 18s; animation-delay: 1s; }
+.leaf-2 { left: 20%; animation-duration: 16s; animation-delay: 0.5s; }
+.leaf-3 { left: 28%; animation-duration: 20s; animation-delay: 2s; }
+.leaf-4 { left: 36%; animation-duration: 14s; animation-delay: 0s; }
+.leaf-5 { left: 44%; animation-duration: 19s; animation-delay: 1s; }
+.leaf-6 { left: 52%; animation-duration: 17s; animation-delay: 0.5s; }
+.leaf-7 { left: 60%; animation-duration: 21s; animation-delay: 1.5s; }
+.leaf-8 { left: 72%; animation-duration: 13s; animation-delay: 0s; }
+.leaf-9 { left: 80%; animation-duration: 18s; animation-delay: 2s; }
+.leaf-10 { left: 88%; animation-duration: 20s; animation-delay: 1s; }
+.leaf-11 { left: 95%; animation-duration: 15s; animation-delay: 0.5s; }
+
+/* Paragraph style */
+.lifestyle-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center; /* ✅ Centered paragraph */
+}
+
+/* Gradient text effect for headings inside content */
+.lifestyle-content h2, .lifestyle-content h3 {
+  background: linear-gradient(90deg, #27ae60, #2ecc71, #16a085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Main navigation styles */
+.main-nav {
+  display: flex;
+  justify-content: center; /* center nav links */
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #27ae60;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.main-nav a:hover {
+  color: #16a085;
+}

@@ -16,29 +16,34 @@ function Products() {
 
   const [cart, setCart] = useState([]);
   const [search, setSearch] = useState("");
-  const [menuOpen, setMenuOpen] = useState(false); // ✅ Add state for menu
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);
   }, []);
 
-  const addToCart = (product) => {
-    let updatedCart;
+  // Add to cart + flying flower effect
+  const addToCart = (product, e) => {
+    // Cart logic
     const exist = cart.find(item => item.id === product.id);
-
-    if (exist) {
-      updatedCart = cart.map(item =>
-        item.id === product.id
-          ? { ...item, qty: item.qty + 1 }
-          : item
-      );
-    } else {
-      updatedCart = [...cart, { ...product, qty: 1 }];
-    }
+    const updatedCart = exist
+      ? cart.map(item => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
+      : [...cart, { ...product, qty: 1 }];
 
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    // Flower animation
+    const rect = e.target.getBoundingClientRect();
+    const flower = {
+      id: Date.now(),
+      x: rect.left + rect.width / 2,
+      y: rect.top,
+    };
+    setFlowers(prev => [...prev, flower]);
+    setTimeout(() => setFlowers(prev => prev.filter(f => f.id !== flower.id)), 1000);
   };
 
   const filteredProducts = productList.filter(product =>
@@ -53,13 +58,7 @@ function Products() {
         <a href="#about">About</a>
         <Link to="/cart">Cart ({cart.length})</Link>
 
-        {/* Menu Icon for extra links */}
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpen(true)}
-        >
-          ☰
-        </div>
+        <div className="menu-icon" onClick={() => setMenuOpen(true)}>☰</div>
 
         {/* Slide Menu */}
         <div className={`slide-menu ${menuOpen ? "active" : ""}`}>
@@ -90,14 +89,25 @@ function Products() {
             <img src={product.image} alt={product.name} className="product-img" />
             <h3>{product.name}</h3>
             <div className="price">MYR {product.price}</div>
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
+            <button onClick={(e) => addToCart(product, e)}>Add to Cart</button>
           </div>
         ))}
       </div>
 
+      {/* Flying flowers */}
+      {flowers.map(flower => (
+        <div
+          key={flower.id}
+          className="flying-flower"
+          style={{
+            left: flower.x,
+            top: flower.y,
+          }}
+        >🌸</div>
+      ))}
+
       {/* ABOUT */}
       <section id="about" className="about-section">
-        <div className="ab"><h1>ABOUT</h1></div>
         <h2>Kembara Afiat</h2>
         <p>
           We provide natural healthy products like pure honey, A2 ghee,
@@ -106,17 +116,16 @@ function Products() {
       </section>
 
       {/* FOOTER */}
-<footer>
-  <h3>🏢 Company: Kembara Afiat</h3>
-  <h3>👤 Founder: Mohamed Firdous</h3>
-  <h3>📍 Location: Johor, Malaysia</h3>
-  <h3>✉️ Email: asbarpkm2004@gmail.com</h3>
-  <h3>📞 Mobile: +91 78269 74909</h3>
-  <div className="link">
-    <a href="https://wa.me/c/60108266105">💬 Click here!</a>
-  </div>
-</footer>
-
+      <footer>
+        <h3>🏢 Company: Kembara Afiat</h3>
+        <h3>👤 Founder: Mohamed Firdous</h3>
+        <h3>📍 Location: Johor, Malaysia</h3>
+        <h3>✉️ Email: asbarpkm2004@gmail.com</h3>
+        <h3>📞 Mobile: +91 78269 74909</h3>
+        <div className="link">
+          <a href="https://wa.me/c/60108266105">💬 Click here!</a>
+        </div>
+      </footer>
 
       <div className="copyright">
         © 2026 Kembara Afiat • All Rights Reserved
@@ -126,9 +135,3 @@ function Products() {
 }
 
 export default Products;
-
-
-
-
-
-

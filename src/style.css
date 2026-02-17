@@ -29,15 +29,15 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
+
 .company-name {
   color: white;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 1px;
-  text-decoration: none; /* ✅ removes underline */
-  cursor: pointer;       /* optional: makes it clear it's clickable */
+  text-decoration: none;
+  cursor: pointer;
 }
-
 
 /* ===== NAVBAR ===== */
 .navbar {
@@ -86,18 +86,15 @@ body {
 }
 
 /* ===== PRODUCTS GRID ===== */
-
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 150px); /* smaller product boxes */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   justify-content: center;
   gap: 15px;
   padding: 20px;
 }
 
 .product-box {
-  width: 150px;
-  height: 220px; /* proportional height */
   background: white;
   border-radius: 12px;
   padding: 8px;
@@ -117,7 +114,7 @@ body {
 
 .product-img {
   width: 100%;
-  height: 90px; /* smaller image */
+  height: 90px;
   object-fit: cover;
   border-radius: 8px;
   transition: 0.3s;
@@ -128,7 +125,7 @@ body {
 }
 
 .product-box h3 {
-  font-size: 12px; /* smaller title */
+  font-size: 12px;
   margin: 6px 0;
 }
 
@@ -237,6 +234,7 @@ body {
   color: #2c3e50;
 }
 
+/* ===== CUSTOMER FORM ===== */
 .customer-box {
   background: white;
   padding: 25px;
@@ -297,15 +295,14 @@ body {
   transform: translateY(-2px);
 }
 
+/* ===== FOOTER ===== */
 footer {
   margin-top: 60px;
   padding: 40px 20px;
   text-align: center;
   color: white;
-
   background: linear-gradient(45deg, #1e8449, #27ae60);
   border-radius: 30px 30px 0 0;
-
   box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
 }
 
@@ -344,7 +341,7 @@ footer .link a:hover {
   text-align: center;
   padding: 15px;
   background: #111;
-  color:gold;
+  color: gold;
   font-size: 14px;
 }
 
@@ -353,10 +350,8 @@ footer .link a:hover {
   padding: 40px;
   max-width: 1200px;
   border-radius: 25px;
-
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
-
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   text-align: center;
   transition: 0.4s ease;
@@ -380,29 +375,7 @@ footer .link a:hover {
   color: #444;
 }
 
-
-/* ===== RESPONSIVE ===== */
-@media (max-width:768px){
-  .products { 
-    grid-template-columns: repeat(auto-fit, 120px); /* smaller on mobile */
-    gap: 10px; 
-    padding: 10px; 
-  }
-  .product-box { 
-    width: 120px; 
-    height: 180px; 
-    padding: 6px; 
-  }
-  .product-img { height: 70px; }
-  .product-box h3 { font-size: 10px; }
-  .price { font-size: 10px; }
-  .product-box button { font-size: 9px; padding: 3px 5px; }
-}
-
-/* ========================= */
-/* MENU ICON */
-/* ========================= */
-
+/* ===== MENU ICON & SLIDE MENU ===== */
 .menu-icon {
   position: absolute;
   right: 25px;
@@ -418,11 +391,6 @@ footer .link a:hover {
   color: #f1c40f;
 }
 
-
-/* ========================= */
-/* SLIDE MENU CONTAINER */
-/* ========================= */
-
 .slide-menu {
   position: fixed;
   top: 0;
@@ -437,14 +405,7 @@ footer .link a:hover {
   z-index: 999;
 }
 
-.slide-menu.active {
-  right: 0;
-}
-
-
-/* ========================= */
-/* CLOSE BUTTON */
-/* ========================= */
+.slide-menu.active { right: 0; }
 
 .close-btn {
   position: absolute;
@@ -463,21 +424,8 @@ footer .link a:hover {
   color: red;
 }
 
-
-/* ========================= */
-/* MENU LIST */
-/* ========================= */
-
-.slide-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.slide-menu li {
-  margin: 20px 0;
-  text-align: center;
-}
-
+.slide-menu ul { list-style: none; padding: 0; }
+.slide-menu li { margin: 20px 0; text-align: center; }
 .slide-menu a {
   position: relative;
   display: inline-block;
@@ -493,11 +441,6 @@ footer .link a:hover {
   transition: all 0.4s ease;
   overflow: hidden;
 }
-
-
-/* ========================= */
-/* WATER RIPPLE EFFECT */
-/* ========================= */
 
 .slide-menu a::before {
   content: "";
@@ -517,164 +460,12 @@ footer .link a:hover {
   height: 300px;
 }
 
-
-/* ========================= */
-/* HOVER EFFECT */
-/* ========================= */
-
 .slide-menu a:hover {
   color: white;
   background: linear-gradient(45deg, #0077ff, #025ee7);
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-
-
-
-/* ===== MOBILE RESPONSIVE ENHANCEMENTS ===== */
-@media (max-width: 768px) {
-  /* Navbar adjustments */
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    align-items: center;
-  }
-
-  .navbar a {
-    padding: 8px 12px;
-    font-size: 13px;
-    width: 90%;       /* full width for buttons */
-    text-align: center;
-  }
-
-  /* Menu icon positioning */
-  .menu-icon {
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-  }
-
-  /* Slide menu full height for mobile */
-  .slide-menu {
-    width: 80%;
-    padding-top: 60px;
-  }
-
-  .slide-menu ul li a {
-    width: 100%;
-    padding: 14px;
-  }
-
-  /* Products grid for mobile */
-  .products {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .product-box {
-    width: 100%;
-    height: auto;
-    padding: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .product-box h3 {
-    font-size: 12px;
-    margin: 5px 0;
-    text-align: center;
-  }
-
-  .price {
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  .product-box button {
-    font-size: 10px;
-    padding: 5px 10px;
-    width: 100%;        /* full width */
-    max-width: 120px;
-  }
-
-  /* Search input full width on mobile */
-  .search-section input {
-    width: 90%;
-  }
-
-  /* Footer adjustments */
-  footer {
-    padding: 30px 10px;
-    font-size: 14px;
-  }
-
-  footer .link a {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  /* About section */
-  .about-section {
-    padding: 20px;
-    margin: 30px 10px;
-  }
-
-  /* Add to Cart flying flower z-index fix */
-  .flying-flower {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* ===== VERY SMALL SCREENS ===== */
-@media (max-width: 480px) {
-  .product-img {
-    height: 80px;
-  }
-
-  .product-box h3 {
-    font-size: 10px;
-  }
-
-  .price {
-    font-size: 10px;
-  }
-
-  .product-box button {
-    font-size: 9px;
-    padding: 4px 6px;
-    width: 100%;
-  }
-
-  .menu-icon {
-    font-size: 22px;
-  }
-
-  .slide-menu {
-    width: 90%;
-  }
-
-  .slide-menu ul li a {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .search-section input {
-    width: 95%;
-    padding: 10px;
-  }
-}
-
 
 /* ===== FLYING FLOWER ===== */
 .flying-flower {
@@ -690,152 +481,38 @@ footer .link a:hover {
   100% { transform: translateY(-150px) scale(0.5); opacity: 0; }
 }
 
-
-/* ===== NAVBAR ===== */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* left-right on desktop */
-  align-items: center;
-  padding: 12px 20px;
-  background: white;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  z-index: 1000;
-}
-
-.navbar a {
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #1622c5, #092ed3);
-  color: white;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  transform: scale(1.08);
-}
-
-/* ===== MENU ICON ===== */
-.menu-icon {
-  display: none; /* hidden on desktop */
-  font-size: 28px;
-  cursor: pointer;
-  color: #333;
-  transition: 0.3s ease;
-}
-
-.menu-icon:hover {
-  transform: scale(1.2) rotate(90deg);
-  color: #f1c40f;
-}
-
-/* ===== SLIDE MENU ===== */
-.slide-menu {
-  position: fixed;
-  top: 0;
-  right: -320px;
-  width: 280px;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
-  box-shadow: -5px 0 25px rgba(0,0,0,0.2);
-  transition: right 0.4s ease-in-out;
-  padding-top: 70px;
-  z-index: 9999;
-}
-
-.slide-menu.active {
-  right: 0;
-}
-
-.slide-menu .close-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 28px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: #333;
-}
-
-.slide-menu ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 40px;
-}
-
-.slide-menu li {
-  margin: 20px 0;
-  text-align: center;
-}
-
-.slide-menu a {
-  display: block;
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(8px);
-  transition: all 0.4s ease;
-}
-
-.slide-menu a:hover {
-  background: linear-gradient(45deg, #0077ff, #025ee7);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* stack logo + links */
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    padding: 10px;
-  }
+  .navbar { flex-direction: column; gap: 10px; padding: 10px; align-items: center; }
+  .navbar a { padding: 8px 12px; font-size: 13px; width: 90%; text-align: center; }
 
-  .navbar a {
-    padding: 6px 14px;
-    font-size: 13px;
-  }
+  .menu-icon { top: 10px; right: 15px; font-size: 24px; }
+  .slide-menu { width: 80%; padding-top: 60px; }
+  .slide-menu ul li a { width: 100%; padding: 14px; }
 
-  .menu-icon {
-    display: block; /* show menu icon */
-    position: absolute;
-    top: 10px;
-    right: 15px;
-  }
+  .products { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; padding: 10px; }
+  .product-box { width: 100%; height: auto; padding: 6px; flex-direction: column; align-items: center; }
+  .product-img { width: 100%; height: 100px; }
+  .product-box h3 { font-size: 12px; margin: 5px 0; text-align: center; }
+  .price { font-size: 12px; }
+  .product-box button { font-size: 10px; padding: 5px 10px; width: 100%; max-width: 120px; }
 
-  /* Center logo/company name */
-  .company-box {
-    justify-content: center;
-  }
+  .search-section input { width: 90%; }
 
-  /* Slide menu width on mobile */
-  .slide-menu {
-    width: 80%;
-    padding-top: 60px;
-  }
+  footer { padding: 30px 10px; font-size: 14px; }
+  footer .link a { padding: 10px 20px; font-size: 14px; }
+  .about-section { padding: 20px; margin: 30px 10px; }
+  .flying-flower { width: 20px; height: 20px; }
 }
 
 @media (max-width: 480px) {
-  .slide-menu {
-    width: 90%;
-  }
+  .product-img { height: 80px; }
+  .product-box h3 { font-size: 10px; }
+  .price { font-size: 10px; }
+  .product-box button { font-size: 9px; padding: 4px 6px; width: 100%; }
 
-  .menu-icon {
-    font-size: 24px;
-  }
+  .menu-icon { font-size: 22px; }
+  .slide-menu { width: 90%; }
+  .slide-menu ul li a { font-size: 14px; padding: 12px; }
+  .search-section input { width: 95%; padding: 10px; }
 }
-
-/* Include all previous CSS here, including navbar, products grid, buttons, footer, about, etc. */
-/* Make sure the mobile responsive sections from my previous answer are included */
-

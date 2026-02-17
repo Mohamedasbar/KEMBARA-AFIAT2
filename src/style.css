@@ -531,7 +531,6 @@ footer .link a:hover {
 
 
 
-
 /* ===== MOBILE RESPONSIVE ENHANCEMENTS ===== */
 @media (max-width: 768px) {
   /* Navbar adjustments */
@@ -539,23 +538,32 @@ footer .link a:hover {
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+    align-items: center;
   }
 
   .navbar a {
     padding: 8px 12px;
     font-size: 13px;
+    width: 90%;       /* full width for buttons */
+    text-align: center;
   }
 
   /* Menu icon positioning */
   .menu-icon {
     top: 10px;
     right: 15px;
+    font-size: 24px;
   }
 
   /* Slide menu full height for mobile */
   .slide-menu {
     width: 80%;
     padding-top: 60px;
+  }
+
+  .slide-menu ul li a {
+    width: 100%;
+    padding: 14px;
   }
 
   /* Products grid for mobile */
@@ -569,23 +577,34 @@ footer .link a:hover {
     width: 100%;
     height: auto;
     padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .product-img {
+    width: 100%;
     height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   .product-box h3 {
     font-size: 12px;
+    margin: 5px 0;
+    text-align: center;
   }
 
   .price {
     font-size: 12px;
+    font-weight: bold;
   }
 
   .product-box button {
     font-size: 10px;
-    padding: 4px 6px;
+    padding: 5px 10px;
+    width: 100%;        /* full width */
+    max-width: 120px;
   }
 
   /* Search input full width on mobile */
@@ -609,6 +628,12 @@ footer .link a:hover {
     padding: 20px;
     margin: 30px 10px;
   }
+
+  /* Add to Cart flying flower z-index fix */
+  .flying-flower {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* ===== VERY SMALL SCREENS ===== */
@@ -627,16 +652,43 @@ footer .link a:hover {
 
   .product-box button {
     font-size: 9px;
-    padding: 3px 5px;
+    padding: 4px 6px;
+    width: 100%;
   }
 
   .menu-icon {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .slide-menu {
     width: 90%;
   }
+
+  .slide-menu ul li a {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .search-section input {
+    width: 95%;
+    padding: 10px;
+  }
 }
 
 
+/* ===== FLYING FLOWER ===== */
+.flying-flower {
+  position: fixed;
+  font-size: 24px;
+  pointer-events: none;
+  animation: flyUp 1s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes flyUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-150px) scale(0.5); opacity: 0; }
+}
+
+/* Include all previous CSS here, including navbar, products grid, buttons, footer, about, etc. */
+/* Make sure the mobile responsive sections from my previous answer are included */

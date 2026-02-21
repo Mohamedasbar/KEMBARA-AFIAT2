@@ -67,7 +67,7 @@ function Products() {
           <ul>
             <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
             <li><Link to="/cart" onClick={() => setMenuOpen(false)}>Cart</Link></li>
-            <li><Link to="/order-history" onClick={() => setMenuOpen(false)}>Order History</Link></li>
+            <li><Link to="/order-history" onClick={() => setMenuOpen(false)}>History</Link></li>
             <li><Link to="/ratings" onClick={() => setMenuOpen(false)}>Ratings</Link></li>
           </ul>
         </div>
@@ -104,7 +104,7 @@ function Products() {
             left: flower.x,
             top: flower.y,
           }}
-        >🌸</div>
+        >🛒</div>
       ))}
 
       {/* ABOUT */}

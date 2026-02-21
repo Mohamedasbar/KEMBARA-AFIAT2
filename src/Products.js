@@ -57,6 +57,7 @@ function Products() {
         <Link to="/">Home</Link>
         <a href="#about">About</a>
         <Link to="/cart">Cart ({cart.length})</Link>
+         <Link to="/order-history">History</Link>
 
         <div className="menu-icon" onClick={() => setMenuOpen(true)}>☰</div>
 

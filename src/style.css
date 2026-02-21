@@ -471,7 +471,7 @@ footer .link a:hover {
 /* ===== FLYING FLOWER ===== */
 .flying-flower {
   position: fixed;
-  font-size: 200px;
+  font-size: 120px;
   pointer-events: none;
   animation: flyUp 1s ease-out forwards;
   z-index: 9999;

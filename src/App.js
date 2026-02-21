@@ -25,9 +25,7 @@ function App() {
         <nav className="main-nav">
           
           <Link to="/lifestyle">Lifestyle</Link>
-        
-          <Link to="/order-history">History</Link>
-        
+
         </nav>
       </div>
 

@@ -26,7 +26,7 @@ function App() {
           
           <Link to="/lifestyle">Lifestyle</Link>
         
-          <Link to="/order-history">Order History</Link>
+          <Link to="/order-history">History</Link>
         
         </nav>
       </div>
